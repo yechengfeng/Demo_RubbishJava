@@ -3,12 +3,12 @@ package com.ye.clazz;
 public class Student {
 	private String name;
 	private int age;
-	private long id;
+	private int id;
 	public Student() {
 		super();
 		
 	}
-	public Student(String name, int age, long id) {
+	public Student(String name, int age, int id) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -29,7 +29,7 @@ public class Student {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	@Override
@@ -39,7 +39,13 @@ public class Student {
 	}
 	@Override
 	public String toString() {
-		return "Student [name=" + name + ", age=" + age + ", id=" + id + "]";
+		return "Student [name=" + name + ", age=" + age + ", id=" + id + "]"+"\r\n";
+	}
+	@Override
+	public boolean equals(Object obj) {
+		Student s = (Student)(obj);
+		
+		return this.name.equals(s.name) && this.age==age&&this.id==id;
 	}
 	
 	
